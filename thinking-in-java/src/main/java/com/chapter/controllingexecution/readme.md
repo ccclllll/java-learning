@@ -28,3 +28,46 @@ controlling execution(流程控制)
     }
 ```
 You cannot use this approach with any of the otherselection or iteration statements.
+4. 关于continue和break
+```java
+    public void testContinueAndBreak(){
+
+        for(char c: "Hello World".toCharArray()){
+            if(c == new Character('r')){
+                break;
+            }
+            System.out.print(c); // Hellowo
+        }
+
+        for(char c: "Hello World".toCharArray()){
+            if(c == new Character('r')){
+                continue;
+            }
+            System.out.print(c);// hello wold
+        }
+    }
+```
+break 会直接结束循环，而continue则是结束当前迭代，进入下一次迭代
+
+4. label 的用法
+```java
+
+label:
+        for (char c : "Hello World".toCharArray()) {
+            if (c == new Character('r')) {
+                break label;
+            }
+            System.out.print(c);
+            for (char b : "Hello World".toCharArray()) {
+                if (b == new Character('r')) {
+                    continue label;
+                }
+                System.out.print(b);
+            }
+        }
+```
+ //  
+ continue label 相当于结束当前迭代，并从label出开始进入下一侧迭代。结果是：HHello WoeHello WolHello WolHello WooHello Wo Hello WoWHello WooHello Wo
+ 如果没有label，则是结束内层循环的当前迭代，进入内层循环的下一层迭代 执行结果会是：HHello WoldeHello WoldlHello WoldlHello WoldoHello Wold Hello WoldWHello WoldoHello Wold
+ 
+ 
