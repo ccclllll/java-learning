@@ -72,4 +72,36 @@ public class Exercise1 {
         byte b = 5;
         overload.f1(b);
     }
+
+    class Father{
+        String name = "father";
+        void sayName(){
+            System.out.println(this.name);
+        }
+        void sayHello(){
+            System.out.println("hello");
+        }
+    }
+
+    class Son extends Father{
+        String name = "son";
+        @Override
+        void sayName(){
+            System.out.println(this.name);
+        }
+    }
+
+    class Use{
+        void f1(Father f){
+            f.sayName();
+        }
+
+    }
+
+    @Test
+    public void testFather(){
+        Son son = new Son();
+        Use use = new Use();
+        use.f1(son);
+    }
 }
