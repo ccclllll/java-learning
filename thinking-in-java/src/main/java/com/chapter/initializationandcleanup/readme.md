@@ -63,7 +63,7 @@ b.peel(); => A.peel(b);
 ```
 那么如何在方法内部获取到这个被编译器自动传入的参数（也就是对象的引用，方法的实际调用者）呢，可以通过this关键字获取。  
 The this keyword—which can be used only inside a non-static method—produces the reference to the object that the method has been called
-for. 
+for.  
 this一般用返回值或者将引用作为参数传递给其他类的方法,也用作在构造器里调用另一个构造函数。this(Object ...arg)
 ```java
 public class Exercise3 {
@@ -92,7 +92,7 @@ public class Exercise3 {
 #### 5. static 关键字
     1. 用static关键字修饰的属性或方法，在类被加载时会被创建在内存中，当我们要使用这些属性或方法时，类必须要被加载到虚拟机。
     2. 非静态内部类不能拥有static关键字修饰的成员变量，因为非静态内部类不会随着外部类一起加载。
-    3. 使用static关键字修饰的内部类，可以用于静态的成员变量。
+    3. 使用static关键字修饰的内部类，会随着外部类加载时而被加载，然后对内部类的静态成员及静态代码块进行初始化。
 ps: 其实很容易理解，在给静态成员变量分配内存空间时，类必须要先被加载，而内部类并不会随着外部类被加载时而被加载，所以无法给静态成员1变量
 分配内存空间。
 
