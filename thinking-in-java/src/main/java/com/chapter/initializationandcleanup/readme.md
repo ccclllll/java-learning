@@ -61,8 +61,8 @@ A b = new A();
 a.peel(); // => A.peel(a)
 b.peel(); => A.peel(b);
 ```
-那么如何在方法内部获取到这个被编译器自动传入的参数（也就是对象的引用，方法的实际调用者）呢，可以通过this关键字获取。
- The this keyword—which can be used only inside a non-static method—produces the reference to the object that the method has been called
+那么如何在方法内部获取到这个被编译器自动传入的参数（也就是对象的引用，方法的实际调用者）呢，可以通过this关键字获取。  
+The this keyword—which can be used only inside a non-static method—produces the reference to the object that the method has been called
 for. 
 this一般用返回值或者将引用作为参数传递给其他类的方法,也用作在构造器里调用另一个构造函数。this(Object ...arg)
 ```java
