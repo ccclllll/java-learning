@@ -123,3 +123,35 @@ f1(String ...s) 写法，可以传入任意多个String 类型的参数，可以
 当垃圾回收器准备释放某块内存空间，回收某个对象的内存时，会首先执行finalize() （任何类都可以覆盖这个方法）方法，然后在下一轮的回收过程中对内存进行释放。
 java对象的内存不一定总是会被回收。当程序不接近于耗尽内存的界限，垃圾回收器不会起作用（垃圾回收器本身会耗费资源，所以如果
 没有必要回收内存空间，垃圾回收器无需工作）。
+finalize()和garbage collection都不一定会执行。
+finalize() 方法一般用作对终止条件的判断，当对象被释放时，要保证他已经可以释放了。
+```java
+
+public class TerminatiionCondition {
+    class Book{
+        boolean checkOut = false;
+        Book(boolean checkOut){
+            this.checkOut = checkOut;
+        }
+        public void checkIn(){
+            checkOut = false;
+        }
+        @Override
+        protected void finalize(){
+            if(checkOut)
+                System.out.println("error: not check in");
+        }
+    }
+
+    @Test
+    public void testTerminationCondition(){
+        Book book  = new Book(true);
+        book.checkIn();
+        new Book(true);  // error: not check in  被回收时报出错误，因为图书没有被登记（所以finalize方法可以用来检查是否满足终止条件
+        System.gc(); // 通知垃圾回收器进行回收 
+    }
+}
+
+```
+#### 8. java垃圾回收器的运行机制  
+垃圾回收器的实现，一般需要一个引用计数器，用来统计对象被引用的次数。
