@@ -123,3 +123,52 @@ f1(String ...s) 写法，可以传入任意多个String 类型的参数，可以
 当垃圾回收器准备释放某块内存空间，回收某个对象的内存时，会首先执行finalize() （任何类都可以覆盖这个方法）方法，然后在下一轮的回收过程中对内存进行释放。
 java对象的内存不一定总是会被回收。当程序不接近于耗尽内存的界限，垃圾回收器不会起作用（垃圾回收器本身会耗费资源，所以如果
 没有必要回收内存空间，垃圾回收器无需工作）。
+#### 8.数组初始化
+```java
+
+public class ArrayInit {
+
+    int[] a = new int[5];
+    int[] a1 = new int[]{1,2,3,4};
+    int[] a2 ;
+    // 存放引用，并非存放实际的对象
+    Integer[] arr = {1,2,3,4,5 };
+    Integer[] arr1 ;
+    Integer[] arr2 = new Integer[5];
+    {
+        a2 = new int[]{1,2,3,4,5};
+        arr1 = new Integer[]{1,2,3,4,5};
+    }
+
+    public static void main(String[] args) {
+        ArrayInit arrayInit = new ArrayInit();
+        System.out.println(Arrays.toString(arrayInit.a2));
+    }
+}
+
+```
+#### 9.静态初始化
+```java
+
+```
+#### 10.初始化列表
+```java
+class Mug{
+    Mug(String mark){
+        System.out.println("mark = [" + mark + "]");
+    }
+}
+public class Mugs {
+    Mug mug1;
+    Mug mug2;
+    {
+        mug1 = new Mug("hhh");
+        mug2 = new Mug("xixi");
+    }
+
+    public static void main(String[] args) {
+        Mugs mugs = new Mugs();
+    }
+}
+
+```
