@@ -18,4 +18,20 @@ public class ChapterTest {
        StaticTest.say(s);
    }
    Object object;
+
+   @Test
+   public void testStaticInitialization(){
+      System.out.println(Dog.name);
+
+
+   }
+}
+ class OverloadingVarargs2 {
+   static void f(float i, Character... args) {
+      System.out.println("first");
+   }
+   static void f(Character... args) {
+      System.out.print("second");
+   }
+
 }
