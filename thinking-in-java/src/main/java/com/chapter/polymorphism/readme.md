@@ -28,3 +28,62 @@ public class MyTest {
 }
 output: A fun
 ```
+当本类和父类都含有同一变量时，会优先寻找本类，就近原则.
+
+构造器中的多态：
+
+```java
+class Father{
+
+    public void fun2(){
+        System.out.println("father fun2 called");
+    }
+    
+    public Father(){
+
+        fun2();
+    }
+}
+class Son extends Father{
+
+    public Son(){
+    }
+    @Override
+    public void fun2(){
+        System.out.println("son fun2 called");
+    }
+
+}
+
+Father ob = new Son(); // son fun2 called
+```
+这里会调用实际对象的（被覆盖的）fun2。这里有个问题：在调用父类构造器调用fun2时，子类还未被构造，所以，如果此时fun2使用了子类的成员变量或引用，则会出现一些
+问题
+
+```java
+class Father{
+
+    public void fun2(){
+        System.out.println("father fun2 called");
+    }
+    
+    public Father(){
+
+        fun2();
+    }
+}
+class Son extends Father{
+
+    int i = 1;
+    public Son(){
+    }
+    @Override
+    public void fun2(){
+        System.out.println("son fun2 called ; i = "+ i);
+    }
+
+}
+
+// Father ob = new Son(); // son fun2 called i = 0
+```
+可见，在未被初始化之前就使用了成员变量，会给出一个默认值
