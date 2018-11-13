@@ -7,6 +7,13 @@ public class StaticTest {
         }
     }
 
+    static class Dog{
+        static String name = "wangwang";
+        static {
+
+}
+    }
+
     public static void say(String args[]){
         System.out.println("args = [" + args + "]");
     }
