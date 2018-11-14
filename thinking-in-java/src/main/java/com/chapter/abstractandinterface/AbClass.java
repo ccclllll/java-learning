@@ -18,7 +18,7 @@ class A extends AbstractClass {
     }
 }
 
-class B {
+class B extends AbstractClass{
     static {
 
     }
@@ -28,6 +28,10 @@ class B {
     }
     B(String index) {
         System.out.println("B con"+index);
+    }
+
+    void fun(String name) {
+
     }
 }
 
@@ -54,5 +58,29 @@ public class AbClass extends A{
 
             }
         };
+    }
+}
+
+interface CanFight {
+    void fight();
+}
+interface CanSwim {
+    void swim();
+}
+interface CanFly extends CanFight {
+    void fly();
+}
+class ActionCharacter {
+
+}
+class Hero extends ActionCharacter
+        implements CanSwim, CanFly {
+
+
+    public void swim() {}
+    public void fly() {}
+
+    public void fight() {
+
     }
 }
