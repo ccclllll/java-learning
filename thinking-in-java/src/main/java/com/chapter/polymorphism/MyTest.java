@@ -112,9 +112,12 @@ class Father{
 }
 class Son extends Father{
 
-    int i = 1;
+    static int i = 1;
     String s = "123";
     public Son(){
+    }
+    {
+        s="12312";
     }
     @Override
     public void fun2(){
