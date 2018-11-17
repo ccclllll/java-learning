@@ -12,13 +12,23 @@ public class MyTest {
     }
     @Test
     public void fun() {
-        a.name = NAME;
+        class A{
+            {
+                System.out.println("A {}");
+            }
+            A(){
+                System.out.println("A ()");
+            }
+        }
+/*        a.name = NAME;
         A a1 = new A();
 
         C c = new C();
 
         B b = new B();
-        fun(b);
+        fun(b);*/
+        A a = new A();
+
     }
 }
 
