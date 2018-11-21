@@ -150,6 +150,9 @@ class TestOO{
 }
 
 class WithInner{
+    void ff(){
+
+    }
     class Inner{
         void say(){
             System.out.println("withInner inner say");
