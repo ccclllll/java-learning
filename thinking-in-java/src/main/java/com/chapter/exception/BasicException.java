@@ -22,8 +22,9 @@ public class BasicException {
             }
             return 1;
         }finally {
-            return 2;
+            System.out.println("finally");
         }
+        return 1;
     }
 
 
@@ -48,10 +49,16 @@ public class BasicException {
         }
     }
 
+
+
     public static void main(String[] args) {
         BasicException basicException = new BasicException();
 
         System.out.println(basicException.useException());
+        String[][] strings = new String[1][0];
+        strings[0] = new String[]{"1","2","3"};
+        System.out.println(strings[0][2]);
+
     }
 
 
