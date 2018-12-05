@@ -32,4 +32,12 @@ class A{
     }
 }
 ```
-3. 
+3. Regular Expressions  正则表达式
+
+    1.边界匹配符：^(一行的开始) $(一行的结束) \b \B \G
+
+    2. 量词 X?(一个或者零个) X*(零个或者多个) X+(一个或者多个) X{n}(恰好) X{n,}(至少n) X{n,m}(n到m个)
+    
+    3. \s(空白符) \S \d(数字) \D \w(字符) \W(非字符) \[abc](即a|b|c) \[^abc](除abc之外) [a-Z[hij]] (求交集，任意hij)
+    4. \n \t \r(回车) \f(换页) \e(转义)
+4. String < StringBuffer(线程安全，使用了同步) <StringBuilder (线程不安全，执行速度最快)
