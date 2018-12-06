@@ -48,7 +48,7 @@ class AG<T extends A>{
 ```
 
 5 类型擦除  
-A<String> a 和A<Integer> b 的class对象是等级的，都会被转换为A类型。
+A<String> a 和A<Integer> b 的class对象是等级的，在运行时都会被转换为A类型。
 通过反射可以绕过编译器，向泛型容器添加任意元素。
 ```java
 class A{
