@@ -20,3 +20,30 @@ class A{
 }
 
 ```
+2.斐波那契数列  
+求第n项
+```java
+public class FeiBoNaQie {
+    public static int  getN(int n){ // 递归法
+        if(n == 1 || n==2)
+            return 1;
+        return getN(n-1)+getN(n-2);
+    }
+    
+    public static int getN2(int n){ // 非递归
+        if(n == 1 || n==2)
+            return 1;
+        int pre = 1;
+        int next = 1;
+        int index = 3;
+        while(index++<=n){
+            int mid = next;
+            next = next+pre;
+            pre= mid;
+            
+        }
+        return next;
+    }
+}
+```
+    

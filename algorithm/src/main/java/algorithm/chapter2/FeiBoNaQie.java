@@ -12,6 +12,20 @@ public class FeiBoNaQie {
         }
         return max;
     }
+    public static int getN2(int n){
+        if(n == 1 || n==2)
+            return 1;
+        int pre = 1;
+        int next = 1;
+        int index = 3;
+        while(index++<=n){
+            int mid = next;
+            next = next+pre;
+            pre= mid;
+
+        }
+        return next;
+    }
 
     public static int getNByRecursion(int n) {
         if (n == 1 || n == 2) { return 1; }
@@ -20,7 +34,7 @@ public class FeiBoNaQie {
 
     public static void main(String[] args) {
         System.out.println("n : " + getN(10));
-        System.out.println("n : " + getNByRecursion(10));
+        System.out.println("n : " + getN2(10));
 
     }
 }
