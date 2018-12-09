@@ -53,6 +53,7 @@ public class GenerisTest {
         //objects.add(new Base());//error
         System.out.println(objects.getClass().equals(bases.getClass()));//true
         ArrayList<Child<String>> children = new ArrayList<>();
+        children.get(1);
         Child<String>[] s = new Child[]{new Child<Double>(), new Child<Integer>()};
         String ss = new String("a");
         Child c = new Child();

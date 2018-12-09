@@ -4,18 +4,19 @@ import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Consumer;
 
-class Snow implements Comparable<Snow>{
+class Snow implements Comparable<Snow> {
 
     private int size;
-    public Snow(int size){
+
+    public Snow(int size) {
         this.size = size;
     }
 
     public int compareTo(Snow o) {
-        if(this.size>o.size){
+        if (this.size > o.size) {
             return 1;
         }
-        if(this.size<o.size){
+        if (this.size < o.size) {
             return -1;
         }
         return 0;
@@ -43,9 +44,9 @@ class Light extends Snow {
     }
 }
 
-class MyArray <E> implements Iterable<E>{
+class MyArray<E> implements Iterable<E> {
 
-    private class Itr implements Iterator<E>{
+    private class Itr implements Iterator<E> {
 
         @Override
         public boolean hasNext() {
@@ -57,7 +58,6 @@ class MyArray <E> implements Iterable<E>{
             return null;
         }
     }
-
 
 
     @Override
@@ -75,6 +75,7 @@ class MyArray <E> implements Iterable<E>{
         return null;
     }
 }
+
 public class CollectionTest {
 
     public static void main(String... args) throws Exception {
@@ -116,11 +117,7 @@ public class CollectionTest {
              * @return
              */
             public int compare(Integer o1, Integer o2) {
-                if (o1 < o2)
-                    return 1;
-                if (o1 > o2)
-                    return -1;
-                return 0;
+                return -(o1 - o2);
             }
         });
 
@@ -129,7 +126,7 @@ public class CollectionTest {
 
         List<Snow> snows = new ArrayList<Snow>();
 
-        Collections.addAll(snows,new Light(1),new Powder(3),new Light(2));
+        Collections.addAll(snows, new Light(1), new Powder(3), new Light(2));
 
         Collections.sort(snows);
 
