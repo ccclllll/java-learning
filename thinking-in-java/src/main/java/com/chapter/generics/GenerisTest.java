@@ -44,6 +44,8 @@ public class GenerisTest {
         GenerisTest test = new GenerisTest();
         test.getParameterType("String");
         List<String> strings = new ArrayList<>();
+        List<Number> numbers = new ArrayList<>();
+        numbers.add(new Double(10));
         List<?> list = strings; // ?只提供可读功能
         List<? extends Base> bases = new ArrayList<>();
         // bases.add(new Child()); // error
