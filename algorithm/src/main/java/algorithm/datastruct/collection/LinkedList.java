@@ -3,8 +3,24 @@ package algorithm.datastruct.collection;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
-public abstract class LinkedList<T> extends List<T> implements Iterable<T> {
+public  class LinkedList<T> extends List<T> implements Iterable<T> {
+    protected Node first = new Node(null, null, null);
+    protected Node last;
 
+    /**
+     * 节点类
+     **/
+    protected class Node {
+        T item;
+        Node next;
+        Node pre;
+
+        Node(Node next, Node pre, T item) {
+            this.item = item;
+            this.next = next;
+            this.pre = pre;
+        }
+    }
     /**
      * 迭代器
      **/

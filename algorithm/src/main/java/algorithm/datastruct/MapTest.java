@@ -1,14 +1,10 @@
 package algorithm.datastruct;
 
-import algorithm.datastruct.collection.LinkedArray;
 import algorithm.datastruct.map.HashMap;
 import algorithm.datastruct.map.MapEntry;
-import sun.plugin.javascript.navig.LinkArray;
 
-import java.lang.annotation.Target;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.Set;
 
 public class MapTest {
@@ -26,10 +22,6 @@ public class MapTest {
         System.out.println(16 >> 1);
 
 
-        LinkedArray<String> array = new LinkedArray();
-        for (int i = 0; i < 10; i++) {
-            array.add(i + "");
-        }
         for(Integer i : map.krySet()){
             System.out.println("args = [" + i + "]");
         }

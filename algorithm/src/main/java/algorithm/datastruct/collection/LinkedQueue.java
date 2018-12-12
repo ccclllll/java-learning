@@ -1,11 +1,12 @@
 package algorithm.datastruct.collection;
 
-public class LinkedQueue<T> extends LinkedList<T> {
+public class LinkedQueue<T>{
+    LinkedList<T> list = new LinkedList<>();
     public void enterQueue(T t) {
-        this.appendEnd(t);
+        list.appendEnd(t);
     }
 
     public T peekQueue() {
-        return removeFront();
+        return list.removeFront();
     }
 }

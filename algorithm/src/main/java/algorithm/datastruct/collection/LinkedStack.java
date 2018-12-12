@@ -1,11 +1,12 @@
 package algorithm.datastruct.collection;
 
-public class LinkedStack<T> extends LinkedList<T> {
+public class LinkedStack<T> {
+    LinkedList<T> list = new LinkedList<>();
     public void push(T t){
-        this.appendFront(t);
+        list.appendFront(t);
     }
 
     public T pop(){
-        return this.removeFront();
+        return list.removeFront();
     }
 }
