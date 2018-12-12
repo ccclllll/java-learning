@@ -1,8 +1,5 @@
 package com.chapter;
 
-import com.chapter.generics.lib.LinkedArray;
-import com.chapter.generics.lib.LinkedQueue;
-import com.chapter.generics.lib.LinkedStack;
 import org.junit.jupiter.api.Test;
 
 public class MyTest {
@@ -38,7 +35,7 @@ public class MyTest {
 
     @Test
     public void testList() throws Exception{
-        LinkedArray<String> array = new LinkedArray<>();
+/*        LinkedArray<String> array = new LinkedArray<>();
         for (int i = 0; i < 10; i++) {
             array.add(i + "");
         }
@@ -47,7 +44,7 @@ public class MyTest {
         System.out.println(array.size());
         Object o = array.getClass().getDeclaredMethod("get",int.class).invoke(array,10);
         System.out.println(o);
-        System.out.println(array.getClass().getDeclaredMethod("get",int.class));
+        System.out.println(array.getClass().getDeclaredMethod("get",int.class));*/
         /*
         array.forEach(string-> System.out.println(string));
 

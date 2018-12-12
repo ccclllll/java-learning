@@ -1,10 +1,11 @@
 package com.chapter.generics.bianjie;
 
-import com.chapter.generics.lib.LinkedArray;
-import com.chapter.generics.lib.List;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Common {
     @Test
@@ -15,7 +16,7 @@ public class Common {
         //编译通过，但是运行时产生java.lang.ArrayStoreException: java.lang.Object 异常，
         // 运行时，数组里存放的引用的实际类型为String，无法将一个Object向下转型为String
         objects[0] = new Object();
-        List<? extends LinkedArray<? extends Number>> list = new LinkedArray<>(); // 编译器不知道list到底持有什么类型，所以不会接受任何类型的Number,禁止了使用了泛型作为参数类型的方法
+        List<? extends LinkedList<? extends Number>> list = new LinkedList<>(); // 编译器不知道list到底持有什么类型，所以不会接受任何类型的Number,禁止了使用了泛型作为参数类型的方法
 
     }
 
